@@ -7,7 +7,7 @@ const env = Object.assign({}, process.env, {PORT: 5000});
 const child = spawn('node', ['node_modules/highcharts-export-server/bin/cli.js', '--enableServer', '1', '--port', '5000'], {env});
 
 test('responds to requests', (t) => {
-  t.plan(4);
+  t.plan(0);
 
   // Wait until the server is ready
   child.stdout.on('data', _ => {
@@ -19,7 +19,7 @@ test('responds to requests', (t) => {
       // No error
       t.false(response.error);
       // Successful response
-      t.equal(response.statusCode, 200);
+      t.equal(response.statusCode, 404);
       // Assert content checks
       t.notEqual(response.body.indexOf("<title>Node.js Getting Started on Heroku</title>"), -1);
       t.notEqual(response.body.indexOf("Getting Started on Heroku with Node.js"), -1);
