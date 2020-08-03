@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "preinstall": "export ACCEPT_HIGHCHARTS_LICENSE=1",
+    "preinstall": "export ACCEPT_HIGHCHARTS_LICENSE=yes",
     "start": "node node_modules/highcharts-export-server/bin/cli.js --enableServer 1 --port 5000",
     "test": "node test.js"
   },
