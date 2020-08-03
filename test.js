@@ -4,7 +4,7 @@ const test = require('tape');
 
 // Start the app
 const env = Object.assign({}, process.env, {PORT: 5000});
-const child = spawn('node', ['index.js'], {env});
+const child = spawn('node', ['node_modules/highcharts-export-server/bin/cli.js', '--enableServer', '1', '--port', '5000'], {env});
 
 test('responds to requests', (t) => {
   t.plan(4);
